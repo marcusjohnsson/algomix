@@ -18,4 +18,4 @@ function reverseString(str) {
   return reversedString;
 }
 
-// A third
+// A third algo
