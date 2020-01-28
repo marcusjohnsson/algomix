@@ -18,4 +18,13 @@ function reverseString(str) {
   return reversedString;
 }
 
-// A third algo
+// Return the factor of a whole number
+// @param int, return int
+function factorize(num) {
+  if (num <= 0) {
+    return 1;
+  } else {
+    return num * factorize(num - 1);
+  }
+}
+console.log(factorize());
