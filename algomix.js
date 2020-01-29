@@ -28,4 +28,5 @@ function factorize(num) {
   }
 }
 
+//
 // Basic Algorithm Scripting: Find the Longest Word in a String, return as int;
