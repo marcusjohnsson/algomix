@@ -39,3 +39,47 @@ function findLongestWordLength(str) {
   });
   return Math.max(...lenghts);
 }
+
+// Piglatinize a word
+// @param str, return str
+function translatePigLatin(str) {
+  const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  // vowels;
+  let ay = "ay";
+  let way = "way";
+  let consonantCluster = String;
+  let vowelCore = String;
+  let hasVowels = false;
+
+  function isVowel(str) {
+    return vowels.includes(str);
+  }
+
+  // Identify vowelCore & consonantCluster and sets has vowels to true
+  for (var i = 0; i < str.length; i++) {
+    if (isVowel(str.charAt(i))) {
+      vowelCore = str.slice(i, str.lenght);
+      consonantCluster = str.slice(0, i);
+      hasVowels = true;
+      break;
+    }
+  }
+
+  // hasVowels = false
+  if (!hasVowels) {
+    console.log("has no vowels");
+    return str + ay;
+  }
+
+  // string doen not begin with a vowel but has a consonsantcluster:
+  if (consonantCluster !== "" && !isVowel(str[0])) {
+    console.log(str, ": string begins with a vowel so add ay to string");
+    return vowelCore + consonantCluster + ay;
+  }
+
+  // begins with vowel
+  if (isVowel(str[0])) {
+    console.log("begins with vowel");
+    return str + way;
+  }
+}
