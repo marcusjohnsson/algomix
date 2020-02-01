@@ -28,5 +28,14 @@ function factorize(num) {
   }
 }
 
-//
-// Basic Algorithm Scripting: Find the Longest Word in a String, return as int;
+// Return the length of the longet word in a string
+// @param str, return int
+function findLongestWordLength(str) {
+  const pattern = /(\w[a-z]*)/g;
+  let words = str.match(pattern);
+  let lenghts = [];
+  words.forEach(element => {
+    lenghts.push(element.length);
+  });
+  return Math.max(...lenghts);
+}
