@@ -65,21 +65,81 @@ function translatePigLatin(str) {
     }
   }
 
-  // hasVowels = false
+  // 1) hasVowels = false
   if (!hasVowels) {
-    console.log("has no vowels");
     return str + ay;
   }
 
-  // string doen not begin with a vowel but has a consonsantcluster:
+  // 2) string doen not begin with a vowel but has a consonsantcluster:
   if (consonantCluster !== "" && !isVowel(str[0])) {
-    console.log(str, ": string begins with a vowel so add ay to string");
     return vowelCore + consonantCluster + ay;
   }
 
   // begins with vowel
   if (isVowel(str[0])) {
-    console.log("begins with vowel");
     return str + way;
   }
 }
+
+// Assertion test
+function uniteUnique(arr) {
+  let arrNum = arguments.length;
+
+  return arr;
+}
+
+function isPangram(str) {
+  let phrase = str.toLowerCase();
+
+  const alphabet = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "x",
+    "y",
+    "z"
+  ];
+
+  let checksum = alphabet.length;
+  let count = 0;
+  let no = 0;
+  for (var i = 0; i < phrase.length; i++) {
+    if (alphabet.includes(phrase[i])) {
+      console.log("yes!");
+      count++;
+    } else {
+      console.log("no!", phrase[i]);
+      no++;
+    }
+  }
+  console.log(alphabet.length);
+  console.log(str.length);
+  count;
+  checksum;
+  if (count => checksum) {
+    return true;
+  } else {
+    return false;
+  }
+}
+let string = "The quick brown fox jumps over the lazy dog.";
+console.log(isPangram(string));
